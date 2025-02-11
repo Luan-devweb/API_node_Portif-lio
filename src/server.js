@@ -51,8 +51,10 @@ app.post("/users", async (req, res) => {
     .json({ message: "Usuário criado com sucesso.", userCreated });
 });
 
+const URI = `${env.MONGO_DB_URI}${env.MONGO_DB_NAME}${env.MONGO_DB_PARAMS}`;
+
 mongoose
-  .connect(env.MONGO_DB_URI)
+  .connect(URI)
   .then(() => {
     console.log("Connect to the MongoDB");
     app.listen(PORT, () => {
