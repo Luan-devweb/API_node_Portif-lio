@@ -1,10 +1,10 @@
-import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { env } from "./env";
-import { bcrypt } from "bcryptjs";
+import { env } from "./env.js";
+import bcrypt from "bcryptjs";
 import { createId } from "@paralleldrive/cuid2";
-import UserModel from "./models/user-model";
+import UserModel from "./models/user-model.js";
+import express from "express";
 
 const app = express();
 
