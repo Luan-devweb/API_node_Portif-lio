@@ -51,6 +51,10 @@ app.post("/users", async (req, res) => {
     .json({ message: "Usuário criado com sucesso.", userCreated });
 });
 
+app.post("/", (_, res) => {
+  return res.json({ message: "Hello, World!" });
+});
+
 const URI = `${env.MONGO_DB_URI}${env.MONGO_DB_NAME}${env.MONGO_DB_PARAMS}`;
 
 mongoose
